@@ -1,0 +1,15 @@
+pathway,basis,level,co2_2040_kt,baseline_2040_kt,difference_to_baseline_kt
+Reference,territorial,no additional digitalization,947.7,905.2,42.5
+Reference,territorial,stagnating,921.5,905.2,16.3
+Reference,territorial,accelerated,890.7,905.2,-14.5
+Reference,consumption,no additional digitalization,10019.9,9741.2,278.7
+Reference,consumption,stagnating,9838.5,9741.2,97.3
+Reference,consumption,accelerated,9661.9,9741.2,-79.3
+Renewables Push,territorial,stagnating,55.5,54.5,1.0
+Renewables Push,territorial,accelerated,53.6,54.5,-0.9
+Renewables Push,consumption,stagnating,8704.9,8630.3,74.6
+Renewables Push,consumption,accelerated,8569.0,8630.3,-61.3
+Bio-Bridge,territorial,stagnating,323.1,317.4,5.7
+Bio-Bridge,territorial,accelerated,312.3,317.4,-5.1
+Bio-Bridge,consumption,stagnating,8664.5,8564.4,100.1
+Bio-Bridge,consumption,accelerated,8487.1,8564.4,-77.3

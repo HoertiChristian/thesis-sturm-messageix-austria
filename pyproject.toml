@@ -1,0 +1,100 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sturm_messageix"
+version = "2.0.2"
+description = "STURM ⇄ MESSAGEix-Austria soft-linkage: digitalization of the building sector as a driver for climate neutrality."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Christian Hörtenhuber" }]
+license = { text = "MIT" }   # own code only; bundled third-party assets keep their terms (see LICENSE)
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering",
+]
+# [project.urls]
+# Repository = "<GitHub URL once the repository is published>"
+
+# Core deps. The package imports and the unit tests run with just these; the heavy
+# IIASA modelling stack (and GAMS/R) are only needed to actually solve — see the
+# `model` extra below.
+dependencies = [
+    "pandas>=2.1",
+    "click>=8.1",
+    "openpyxl>=3.1",   # pandas .xlsx engine for the input workbooks
+]
+
+[project.optional-dependencies]
+model = [
+    # IIASA modelling stack — imported lazily, only when building/solving a scenario.
+    "message_ix>=3.7",
+    "ixmp>=3.7",
+]
+viz = [
+    "matplotlib>=3.8",   # viz/shape_sensitivity.py, viz/digitalization_band.py
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=5.0",
+    "ruff>=0.5",
+    "mypy>=1.10",
+]
+
+[project.scripts]
+sturm-messageix = "linkage.cli:cli"
+
+[tool.hatch.build.targets.wheel]
+# Four top-level packages: demand side (sturm, incl. the vendored R model),
+# supply side (messageix), the coupling (linkage), shared infra (common).
+packages = ["src/sturm", "src/messageix", "src/linkage", "src/common"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "RUF", "N", "D"]
+ignore = [
+    "D203",   # one-blank-line-before-class — incompatible with D211
+    "D213",   # multi-line-summary-second-line — incompatible with D212
+    "D107",   # missing docstring on __init__ — class docstring suffices
+    "RUF001", "RUF002", "RUF003",   # ×, −, –, α in strings/docstrings/comments are deliberate
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["D"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = ["-ra", "--strict-markers", "--strict-config"]
+testpaths = ["tests"]
+# src/ layout + repo root (`tests.*` and `viz.*` imports); lets `pytest` run
+# without a manual PYTHONPATH=src.
+pythonpath = ["src", "."]
+filterwarnings = [
+    "error",
+    # message_ix.Scenario.read_excel / pandas read_excel leave the workbook handle open
+    # (openpyxl); the benign ResourceWarning surfaces nondeterministically at GC.
+    # Third-party, not ours.
+    "ignore:.*MESSAGEix-AT_baseline.*:pytest.PytestUnraisableExceptionWarning",
+    "ignore:.*inputs.xlsx.*:pytest.PytestUnraisableExceptionWarning",
+]
+markers = [
+    "slow: integration test that shells out to the STURM R model / GAMS (deselect with '-m \"not slow\"')",
+]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_configs = true
+# IIASA stack ships without complete stubs.
+[[tool.mypy.overrides]]
+module = ["message_ix.*", "ixmp.*"]
+ignore_missing_imports = true

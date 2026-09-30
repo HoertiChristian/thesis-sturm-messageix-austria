@@ -1,0 +1,832 @@
+2026-09-13 10:34:39,280 INFO linkage.runlog: Run log started -> /home/jovyan/hoertenhuber_ideas_message_ix/results/logs/run_20260913T103439Z.log
+2026-09-13 10:35:02,954 INFO linkage.pipeline: Running pathway-reference__digi-baseline
+2026-09-13 10:35:03,336 INFO genno.config: Apply global unit definitions y = year
+2026-09-13 10:35:03,341 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:35:35,984 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:35:35,997 INFO messageix.pathways: Pathway reference: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 10:35:36,095 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 10:35:36,584 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:35:36,882 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:35:36,884 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:35:36,884 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:35:53,801 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:35:54,282 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:36:16,066 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:36:16,532 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:36:21,699 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02426
+2026-09-13 10:36:21,703 INFO linkage.loop: Iteration 1: top changers: 2040=0.0243, 2045=0.0243, 2050=0.0243
+2026-09-13 10:36:36,759 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:36:38,468 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:36:44,134 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:36:45,772 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-reference__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:36:45,802 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:36:45,824 INFO linkage.pipeline: Running pathway-renewables_push__digi-baseline
+2026-09-13 10:36:45,825 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:37:13,334 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:37:13,336 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:37:13,408 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:37:13,435 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:37:14,009 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:37:14,264 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:37:14,266 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:37:14,266 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:37:29,363 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:37:29,724 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:37:49,945 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:37:51,594 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:37:56,873 INFO linkage.loop: Iteration 1: L-inf demand change = 0.01994
+2026-09-13 10:37:56,876 INFO linkage.loop: Iteration 1: top changers: 2040=0.0199, 2045=0.0199, 2050=0.0199
+2026-09-13 10:38:12,427 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:38:14,035 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:38:19,300 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:38:21,044 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:38:21,074 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:38:21,092 INFO linkage.pipeline: Running pathway-reference__digi-baseline
+2026-09-13 10:38:21,093 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:38:54,404 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:38:54,415 INFO messageix.pathways: Pathway reference: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 10:38:54,496 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 10:38:54,837 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:38:55,050 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:38:55,051 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:38:55,052 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:39:10,544 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:39:10,867 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:39:32,141 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:39:32,540 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:39:37,703 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02426
+2026-09-13 10:39:37,706 INFO linkage.loop: Iteration 1: top changers: 2040=0.0243, 2045=0.0243, 2050=0.0243
+2026-09-13 10:39:53,398 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:39:55,011 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:40:00,071 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:40:01,708 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-reference__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:40:01,737 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:40:01,738 INFO linkage.pipeline: Running pathway-reference__digi-stagnating
+2026-09-13 10:40:01,739 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:40:29,269 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:40:29,282 INFO messageix.pathways: Pathway reference: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 10:40:29,368 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 10:40:29,732 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:40:29,959 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9723 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:40:29,960 INFO linkage.loop: Digitalization stagnating: efficiency factor 0.9723 at 2040 (useful demand unchanged)
+2026-09-13 10:40:29,960 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:40:46,191 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:40:46,532 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:41:08,635 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:41:09,149 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:41:13,962 INFO linkage.loop: Iteration 1: L-inf demand change = 0.0264
+2026-09-13 10:41:13,965 INFO linkage.loop: Iteration 1: top changers: 2040=0.0264, 2045=0.0264, 2050=0.0264
+2026-09-13 10:41:35,145 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:41:36,859 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:41:42,074 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:41:43,581 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-reference__digi-stagnating
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:41:43,610 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:41:43,611 INFO linkage.pipeline: Running pathway-reference__digi-accelerated
+2026-09-13 10:41:43,612 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:42:10,547 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:42:10,559 INFO messageix.pathways: Pathway reference: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 10:42:10,645 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 10:42:11,031 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:42:11,264 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9399 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:42:11,266 INFO linkage.loop: Digitalization accelerated: efficiency factor 0.9399 at 2040 (useful demand unchanged)
+2026-09-13 10:42:11,266 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:42:32,636 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:42:32,987 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:43:00,707 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:43:01,262 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:43:07,106 INFO linkage.loop: Iteration 1: L-inf demand change = 0.0246
+2026-09-13 10:43:07,109 INFO linkage.loop: Iteration 1: top changers: 2040=0.0246, 2045=0.0246, 2050=0.0246
+2026-09-13 10:43:28,922 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:43:30,880 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:43:36,566 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:43:38,340 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-reference__digi-accelerated
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:43:38,376 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:43:38,385 INFO linkage.pipeline: Running pathway-renewables_push__digi-baseline
+2026-09-13 10:43:38,386 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:44:11,695 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:44:11,696 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:44:11,751 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:44:11,763 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:44:13,561 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:44:13,791 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:44:13,792 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:44:13,792 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:44:34,819 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:44:35,184 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:45:01,993 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:45:03,898 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:45:09,592 INFO linkage.loop: Iteration 1: L-inf demand change = 0.01994
+2026-09-13 10:45:09,595 INFO linkage.loop: Iteration 1: top changers: 2040=0.0199, 2045=0.0199, 2050=0.0199
+2026-09-13 10:45:31,242 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:45:33,003 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:45:39,053 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:45:40,968 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:45:41,003 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:45:41,004 INFO linkage.pipeline: Running pathway-renewables_push__digi-stagnating
+2026-09-13 10:45:41,004 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:46:09,216 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:46:09,217 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:46:09,272 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:46:09,284 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:46:11,053 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:46:11,284 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9723 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:46:11,285 INFO linkage.loop: Digitalization stagnating: efficiency factor 0.9723 at 2040 (useful demand unchanged)
+2026-09-13 10:46:11,286 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:46:32,203 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:46:32,584 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:46:58,988 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:47:00,868 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:47:06,485 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02143
+2026-09-13 10:47:06,487 INFO linkage.loop: Iteration 1: top changers: 2040=0.0214, 2045=0.0214, 2050=0.0214
+2026-09-13 10:47:27,038 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:47:28,811 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:47:34,547 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:47:36,364 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-stagnating
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:47:36,397 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:47:36,398 INFO linkage.pipeline: Running pathway-renewables_push__digi-accelerated
+2026-09-13 10:47:36,399 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:48:04,466 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:48:04,467 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:48:04,522 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:48:04,534 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:48:06,264 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:48:06,490 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9399 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:48:06,491 INFO linkage.loop: Digitalization accelerated: efficiency factor 0.9399 at 2040 (useful demand unchanged)
+2026-09-13 10:48:06,491 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:48:26,907 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:48:27,251 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:48:53,659 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:48:55,475 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:49:00,910 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02107
+2026-09-13 10:49:00,913 INFO linkage.loop: Iteration 1: top changers: 2035=0.0211, 2040=0.0204, 2045=0.0204
+2026-09-13 10:49:21,283 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:49:23,127 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:49:28,641 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 5.244e-05 (tol=0.005)
+2026-09-13 10:49:30,454 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-accelerated
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:49:30,487 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:49:30,495 INFO linkage.pipeline: Running pathway-bio_bridge__digi-baseline
+2026-09-13 10:49:30,496 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:50:04,096 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:50:04,097 INFO messageix.pathways: Pathway bio_bridge: activity dials applied as target transforms in the linkage.
+2026-09-13 10:50:04,157 INFO messageix.pathways: Pathway bio_bridge: eag_solar floor eag2030 (GWa: {2030: 1.256, 2035: 1.256, 2040: 1.256})
+2026-09-13 10:50:04,169 INFO messageix.pathways: Pathway bio_bridge: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:50:06,429 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:50:06,663 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:50:06,664 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:50:06,664 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:50:28,005 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:50:28,348 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:50:54,666 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:50:56,665 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:51:02,256 INFO linkage.loop: Iteration 1: L-inf demand change = 0.01716
+2026-09-13 10:51:02,259 INFO linkage.loop: Iteration 1: top changers: 2040=0.0172, 2045=0.0172, 2050=0.0172
+2026-09-13 10:51:22,317 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:51:24,119 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:51:29,750 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:51:31,578 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-bio_bridge__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:51:31,611 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:51:31,612 INFO linkage.pipeline: Running pathway-bio_bridge__digi-stagnating
+2026-09-13 10:51:31,612 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:51:59,547 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:51:59,548 INFO messageix.pathways: Pathway bio_bridge: activity dials applied as target transforms in the linkage.
+2026-09-13 10:51:59,601 INFO messageix.pathways: Pathway bio_bridge: eag_solar floor eag2030 (GWa: {2030: 1.256, 2035: 1.256, 2040: 1.256})
+2026-09-13 10:51:59,613 INFO messageix.pathways: Pathway bio_bridge: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:52:01,689 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:52:01,914 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9723 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:52:01,915 INFO linkage.loop: Digitalization stagnating: efficiency factor 0.9723 at 2040 (useful demand unchanged)
+2026-09-13 10:52:01,916 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:52:21,941 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:52:22,299 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:52:48,293 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:52:50,330 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:52:55,799 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02102
+2026-09-13 10:52:55,802 INFO linkage.loop: Iteration 1: top changers: 2040=0.021, 2045=0.021, 2050=0.021
+2026-09-13 10:53:16,088 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:53:17,895 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:53:23,511 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0.000108 (tol=0.005)
+2026-09-13 10:53:25,496 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-bio_bridge__digi-stagnating
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:53:25,528 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:53:25,529 INFO linkage.pipeline: Running pathway-bio_bridge__digi-accelerated
+2026-09-13 10:53:25,529 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:54:00,061 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:54:00,062 INFO messageix.pathways: Pathway bio_bridge: activity dials applied as target transforms in the linkage.
+2026-09-13 10:54:00,105 INFO messageix.pathways: Pathway bio_bridge: eag_solar floor eag2030 (GWa: {2030: 1.256, 2035: 1.256, 2040: 1.256})
+2026-09-13 10:54:00,117 INFO messageix.pathways: Pathway bio_bridge: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:54:01,972 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 10:54:02,260 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9399 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:54:02,261 INFO linkage.loop: Digitalization accelerated: efficiency factor 0.9399 at 2040 (useful demand unchanged)
+2026-09-13 10:54:02,262 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:54:22,465 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:54:22,818 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:54:48,572 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:54:50,527 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:54:55,923 INFO linkage.loop: Iteration 1: L-inf demand change = 0.01711
+2026-09-13 10:54:55,926 INFO linkage.loop: Iteration 1: top changers: 2040=0.0171, 2045=0.0171, 2050=0.0171
+2026-09-13 10:55:15,471 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 10:55:17,407 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:55:22,927 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:55:24,983 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-bio_bridge__digi-accelerated
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:55:25,014 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:55:25,022 INFO linkage.pipeline: Running pathway-renewables_push__digi-baseline__shape-linear
+2026-09-13 10:55:25,023 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:55:53,138 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:55:53,140 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:55:53,386 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:55:53,397 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:55:55,328 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:55:55,583 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:55:55,584 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 10:55:55,585 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:56:14,507 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:56:14,854 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:56:39,643 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:56:41,698 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:56:47,151 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02013
+2026-09-13 10:56:47,154 INFO linkage.loop: Iteration 1: top changers: 2040=0.0201, 2045=0.0201, 2050=0.0201
+2026-09-13 10:57:05,960 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:57:07,920 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:57:13,233 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:57:15,205 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:57:15,239 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:57:15,240 INFO linkage.pipeline: Running pathway-renewables_push__digi-stagnating__shape-linear
+2026-09-13 10:57:15,241 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:57:43,442 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:57:43,444 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:57:43,673 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:57:43,684 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:57:45,711 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:57:45,956 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9723 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:57:45,957 INFO linkage.loop: Digitalization stagnating: efficiency factor 0.9723 at 2040 (useful demand unchanged)
+2026-09-13 10:57:45,957 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:58:04,305 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:58:04,647 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:58:28,022 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:58:30,069 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:58:35,400 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02133
+2026-09-13 10:58:35,403 INFO linkage.loop: Iteration 1: top changers: 2040=0.0213, 2045=0.0213, 2050=0.0213
+2026-09-13 10:58:53,593 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:58:55,516 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 10:59:01,105 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 10:59:03,053 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-stagnating
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 10:59:03,084 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 10:59:03,084 INFO linkage.pipeline: Running pathway-renewables_push__digi-accelerated__shape-linear
+2026-09-13 10:59:03,085 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 10:59:33,426 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 10:59:33,428 INFO messageix.pathways: Pathway renewables_push: activity dials applied as target transforms in the linkage.
+2026-09-13 10:59:33,471 INFO messageix.pathways: Pathway renewables_push: eag_solar floor eag_continued (GWa: {2030: 1.256, 2035: 1.884, 2040: 2.511})
+2026-09-13 10:59:33,483 INFO messageix.pathways: Pathway renewables_push: fossil power exit 2040 (coal/oil→0 from 2030; gas → 25% residual)
+2026-09-13 10:59:35,490 INFO linkage.loop: STURM scenario column: SSP2_RENAT
+2026-09-13 10:59:35,736 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9399 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 10:59:35,737 INFO linkage.loop: Digitalization accelerated: efficiency factor 0.9399 at 2040 (useful demand unchanged)
+2026-09-13 10:59:35,737 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 10:59:53,973 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 10:59:54,319 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:00:19,320 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 11:00:21,462 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:00:26,930 INFO linkage.loop: Iteration 1: L-inf demand change = 0.0213
+2026-09-13 11:00:26,932 INFO linkage.loop: Iteration 1: top changers: 2035=0.0213, 2040=0.0203, 2045=0.0203
+2026-09-13 11:00:45,553 INFO sturm.driver: STURM resid/SSP2_RENAT: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2_RENAT.csv
+2026-09-13 11:00:47,659 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:00:53,303 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:00:55,364 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-renewables_push__digi-accelerated
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:00:55,401 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:00:55,410 INFO linkage.pipeline: Running pathway-ref_tax0__digi-baseline
+2026-09-13 11:00:55,411 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:01:24,337 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:01:24,349 INFO messageix.pathways: Pathway ref_tax0: carbon tax flat 0.0 on 13 model years (0.0–0.0 USD/tCO2)
+2026-09-13 11:01:24,425 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:01:26,348 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:01:26,595 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:01:26,596 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:01:26,596 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:01:44,564 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:01:44,919 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:02:08,393 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:02:10,461 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:02:15,968 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02177
+2026-09-13 11:02:15,971 INFO linkage.loop: Iteration 1: top changers: 2040=0.0218, 2045=0.0218, 2050=0.0218
+2026-09-13 11:02:33,942 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:02:35,917 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:02:41,437 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:02:43,421 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_tax0__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:02:43,452 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:02:43,452 INFO linkage.pipeline: Running pathway-ref_tax40__digi-baseline
+2026-09-13 11:02:43,453 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:03:10,949 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:03:10,960 INFO messageix.pathways: Pathway ref_tax40: carbon tax flat 40.0 on 13 model years (40.0–40.0 USD/tCO2)
+2026-09-13 11:03:11,041 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:03:12,914 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:03:13,171 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:03:13,172 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:03:13,172 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:03:30,985 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:03:31,341 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:03:54,546 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:03:56,614 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:04:01,927 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02253
+2026-09-13 11:04:01,930 INFO linkage.loop: Iteration 1: top changers: 2040=0.0225, 2045=0.0225, 2050=0.0225
+2026-09-13 11:04:19,836 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:04:21,793 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:04:27,069 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:04:29,157 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_tax40__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:04:29,203 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:04:29,204 INFO linkage.pipeline: Running pathway-ref_tax55__digi-baseline
+2026-09-13 11:04:29,204 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:05:03,521 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:05:03,532 INFO messageix.pathways: Pathway ref_tax55: carbon tax flat 55.0 on 13 model years (55.0–55.0 USD/tCO2)
+2026-09-13 11:05:03,609 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:05:05,502 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:05:05,739 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:05:05,740 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:05:05,741 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:05:23,473 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:05:23,812 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:05:47,092 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:05:49,205 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:05:54,563 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02352
+2026-09-13 11:05:54,565 INFO linkage.loop: Iteration 1: top changers: 2040=0.0235, 2045=0.0235, 2050=0.0235
+2026-09-13 11:06:12,388 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:06:14,396 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:06:19,639 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:06:21,622 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_tax55__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:06:21,652 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:06:21,652 INFO linkage.pipeline: Running pathway-ref_tax80__digi-baseline
+2026-09-13 11:06:21,653 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:06:48,705 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:06:48,716 INFO messageix.pathways: Pathway ref_tax80: carbon tax flat 80.0 on 13 model years (80.0–80.0 USD/tCO2)
+2026-09-13 11:06:48,799 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:06:50,618 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:06:50,863 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:06:50,865 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:06:50,865 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:07:08,667 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:07:09,013 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:07:35,506 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:07:37,591 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:07:42,866 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02423
+2026-09-13 11:07:42,868 INFO linkage.loop: Iteration 1: top changers: 2040=0.0242, 2045=0.0242, 2050=0.0242
+2026-09-13 11:08:00,759 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:08:02,691 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:08:07,951 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:08:09,982 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_tax80__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:08:10,012 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:08:10,013 INFO linkage.pipeline: Running pathway-ref_tax120__digi-baseline
+2026-09-13 11:08:10,013 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:08:44,070 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:08:44,081 INFO messageix.pathways: Pathway ref_tax120: carbon tax flat 120.0 on 13 model years (120.0–120.0 USD/tCO2)
+2026-09-13 11:08:44,182 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:08:45,999 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:08:46,264 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:08:46,265 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:08:46,265 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:09:04,325 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:09:04,663 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:09:28,640 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:09:30,748 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:09:36,019 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02462
+2026-09-13 11:09:36,022 INFO linkage.loop: Iteration 1: top changers: 2040=0.0246, 2045=0.0246, 2050=0.0246
+2026-09-13 11:09:53,385 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:09:55,377 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:10:00,527 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:10:02,495 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_tax120__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:10:02,526 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:10:02,543 INFO linkage.pipeline: Running pathway-ref_wilson_enable_extreme__digi-baseline
+2026-09-13 11:10:02,544 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:10:29,926 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:10:29,938 INFO messageix.pathways: Pathway ref_wilson_enable_extreme: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 11:10:30,014 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:10:31,889 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:10:32,140 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:10:32,141 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:10:32,141 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:10:49,364 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:10:49,378 INFO linkage.loop: Pathway ref_wilson_enable_extreme: Wilson demand modifier -22% (ramped 2025→2050; 2040 factor 0.868)
+2026-09-13 11:10:49,703 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:11:11,941 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:11:13,958 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:11:18,948 INFO linkage.loop: Iteration 1: L-inf demand change = 0.0228
+2026-09-13 11:11:18,951 INFO linkage.loop: Iteration 1: top changers: 2045=0.0228, 2050=0.0228, 2055=0.0228
+2026-09-13 11:11:35,987 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:11:37,949 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:11:43,187 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0 (tol=0.005)
+2026-09-13 11:11:45,282 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_wilson_enable_extreme__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:11:45,315 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:11:45,316 INFO linkage.pipeline: Running pathway-ref_wilson_enable_cautious__digi-baseline
+2026-09-13 11:11:45,317 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:12:12,551 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:12:12,562 INFO messageix.pathways: Pathway ref_wilson_enable_cautious: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 11:12:12,636 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:12:14,618 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:12:14,864 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:12:14,865 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:12:14,865 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:12:31,984 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:12:31,997 INFO linkage.loop: Pathway ref_wilson_enable_cautious: Wilson demand modifier -5% (ramped 2025→2050; 2040 factor 0.970)
+2026-09-13 11:12:32,316 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:12:54,310 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:12:56,319 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:13:01,387 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02416
+2026-09-13 11:13:01,391 INFO linkage.loop: Iteration 1: top changers: 2045=0.0242, 2050=0.0242, 2055=0.0242
+2026-09-13 11:13:18,521 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:13:20,603 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:13:25,934 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 1.99e-05 (tol=0.005)
+2026-09-13 11:13:28,010 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_wilson_enable_cautious__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:13:28,042 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:13:28,043 INFO linkage.pipeline: Running pathway-ref_wilson_undermine_cautious__digi-baseline
+2026-09-13 11:13:28,043 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:14:02,563 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:14:02,575 INFO messageix.pathways: Pathway ref_wilson_undermine_cautious: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 11:14:02,803 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:14:04,790 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:14:05,022 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:14:05,023 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:14:05,024 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:14:21,843 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:14:21,857 INFO linkage.loop: Pathway ref_wilson_undermine_cautious: Wilson demand modifier +3% (ramped 2025→2050; 2040 factor 1.018)
+2026-09-13 11:14:22,177 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:14:43,888 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:14:46,003 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:14:51,009 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02426
+2026-09-13 11:14:51,012 INFO linkage.loop: Iteration 1: top changers: 2040=0.0243, 2050=0.0243, 2055=0.0243
+2026-09-13 11:15:08,093 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:15:10,069 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:15:14,922 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 0.0008046 (tol=0.005)
+2026-09-13 11:15:16,976 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_wilson_undermine_cautious__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:15:17,006 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:15:17,007 INFO linkage.pipeline: Running pathway-ref_wilson_undermine_extreme__digi-baseline
+2026-09-13 11:15:17,007 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:15:44,418 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:15:44,429 INFO messageix.pathways: Pathway ref_wilson_undermine_extreme: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 11:15:44,524 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:15:46,552 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:15:46,800 INFO linkage.digital: Digital efficiency: input coefficients of 7 techs scaled over 2030–2110 (factor 0.9552 at 2110); 48 CO2 emission-factor rows scaled alike
+2026-09-13 11:15:46,801 INFO linkage.loop: Digitalization baseline: efficiency factor 0.9552 at 2040 (useful demand unchanged)
+2026-09-13 11:15:46,801 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:16:03,169 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:16:03,185 INFO linkage.loop: Pathway ref_wilson_undermine_extreme: Wilson demand modifier +9% (ramped 2025→2050; 2040 factor 1.054)
+2026-09-13 11:16:03,528 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:16:25,404 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:16:27,604 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:16:32,792 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02596
+2026-09-13 11:16:32,795 INFO linkage.loop: Iteration 1: top changers: 2050=0.026, 2055=0.026, 2060=0.026
+2026-09-13 11:16:49,904 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:16:52,041 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:16:57,353 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 1.896e-05 (tol=0.005)
+2026-09-13 11:16:59,596 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-ref_wilson_undermine_extreme__digi-baseline
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:16:59,629 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.
+2026-09-13 11:16:59,637 INFO linkage.pipeline: Running pathway-reference__digi-none
+2026-09-13 11:16:59,638 INFO messageix.build: Importing MESSAGEix-Austria/baseline-2025-r8 from /home/jovyan/hoertenhuber_ideas_message_ix/data/MESSAGEix-AT_baseline_4.xlsx
+2026-09-13 11:17:27,559 INFO messageix.build: Baseline calibration verified: firstmodelyear=2025; rc_spec base-year final 1.8222 GWa within 3% of reference 1.8222 GWa.
+2026-09-13 11:17:27,571 INFO messageix.pathways: Pathway reference: carbon tax nehg_ets2 on 13 model years (55.0–100.0 USD/tCO2)
+2026-09-13 11:17:27,646 INFO messageix.pathways: Clearing leftover supply dials from a previous cell
+2026-09-13 11:17:29,354 INFO linkage.loop: STURM scenario column: SSP2
+2026-09-13 11:17:29,431 INFO linkage.digital: Digital efficiency: no year carries a reduction; scenario unchanged
+2026-09-13 11:17:29,432 INFO linkage.loop: Digitalization none: efficiency factor 1.0000 at 2040 (useful demand unchanged)
+2026-09-13 11:17:29,433 INFO linkage.loop: Price feedback damping alpha = 0.5
+2026-09-13 11:17:46,070 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:17:46,424 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:18:07,996 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:18:10,328 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:18:15,762 INFO linkage.loop: Iteration 1: L-inf demand change = 0.02871
+2026-09-13 11:18:15,765 INFO linkage.loop: Iteration 1: top changers: 2040=0.0287, 2045=0.0287, 2050=0.0287
+2026-09-13 11:18:33,491 INFO sturm.driver: STURM resid/SSP2: 146 rows, final-energy years=[2025, 2030, 2035, 2040] -> /home/jovyan/hoertenhuber_ideas_message_ix/results/sturm/report_MESSAGE_resid_SSP2.csv
+2026-09-13 11:18:35,818 INFO message_ix.models: Use CPLEX options {'advind': 0, 'lpmethod': 4, 'threads': 4, 'epopt': 1e-06}
+2026-09-13 11:18:41,062 INFO linkage.loop: Linkage converged at iteration 2: L-inf demand change = 6.319e-05 (tol=0.005)
+2026-09-13 11:18:43,202 WARNING linkage.pipeline: Could not export inventory_check.csv for pathway-reference__digi-none
+Traceback (most recent call last):
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 224, in _write_reports
+    fetch().to_csv(out / name, index=False)
+    ^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 220, in <lambda>
+    "inventory_check.csv": lambda: _inventory_check(msg, config),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/linkage/pipeline.py", line 185, in _inventory_check
+    return compare_to_inventory(modelled, config.base_year)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jovyan/hoertenhuber_ideas_message_ix/src/common/validation/inventory.py", line 39, in compare_to_inventory
+    inv_year = int(str(targets["uba_inventory_year"]))
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '2022.0'
+2026-09-13 11:18:43,235 WARNING linkage.pipeline: Base-year rc_therm supply 8.383 GWa vs demand 8.383 GWa (residual -0.0%) — pinned surplus is free-disposed; see the 2026-08-28 review, A1.

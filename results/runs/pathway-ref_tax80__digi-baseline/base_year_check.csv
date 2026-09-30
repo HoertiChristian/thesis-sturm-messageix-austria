@@ -1,0 +1,8 @@
+base_year,fuel,modelled_gwa,reference_gwa,rel_deviation,passed
+2025,biomass,2.7001,2.7001,0.0,True
+2025,coal,0.0051,0.0051,0.0,True
+2025,d_heat,1.933,1.933,0.0,True
+2025,electr,3.1757,3.1757,-0.0,True
+2025,gas,1.8782,1.8782,0.0,True
+2025,lightoil,0.8057,0.8057,0.0,True
+2025,TOTAL,10.4978,10.4978,-0.0,True

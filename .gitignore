@@ -1,0 +1,53 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+
+# ---- Jupyter ----
+.ipynb_checkpoints/
+
+# ---- Run outputs (regeneratable) ----
+# Results: the r8 result set (runs, tables, figures, its run log) is tracked;
+# scratch, executed notebooks and archives are not.
+results/sturm/
+results/logs/*
+!results/logs/run_20260908T183848Z.log
+!results/logs/run_20260913T103439Z.log
+results/*.html
+results/*.tar.gz
+results/*/
+!results/runs/
+!results/tables/
+!results/figures/
+!results/logs/
+env_capture_*.txt
+
+# ---- Restricted third-party inputs (not public; available on request, see data/README.md) ----
+data/MESSAGEix-AT_baseline_4.xlsx
+data/macko_reduction.xlsx
+225[a-z]/          # GAMS scratch dirs left by interrupted solves
+data/processed/
+data/interim/
+
+# ---- Source downloads (provenance, not redistributed here) ----
+data/raw/
+
+# ---- Bundled third-party assets: keep only regeneratable bits out ----
+# STURM model+data, the MESSAGEix-Austria baseline workbook, and the Macko (2025)
+# data are committed so the repo runs standalone (see data/README.md for their
+# third-party licences/terms). Only STURM's regeneratable run outputs are ignored.
+src/sturm/output/
+**/.DS_Store
+DS_Store
+
+# ---- R session artifacts ----
+.Rhistory
+.RData
+.Rproj.user/

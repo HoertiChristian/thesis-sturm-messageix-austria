@@ -1,0 +1,7 @@
+fuel,ef_direct_tco2eq_per_mwh,ef_total_tco2eq_per_mwh
+gas,0.201,0.249
+lightoil,0.271,0.342
+coal,0.34,0.34
+biomass,0.015,0.024
+d_heat,0.0,0.166
+electr,0.0,0.152

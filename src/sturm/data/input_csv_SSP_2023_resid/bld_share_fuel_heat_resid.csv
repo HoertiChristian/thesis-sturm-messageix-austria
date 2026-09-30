@@ -1,0 +1,13 @@
+region_gea,urt,fuel_heat,value
+AUT,urb,coal,0
+AUT,urb,oil,0.195453
+AUT,urb,gas,0.204377
+AUT,urb,biomass_solid,0.414499
+AUT,urb,electricity,0.0557014
+AUT,urb,elec_hp,0.12997
+AUT,rur,coal,0
+AUT,rur,oil,0.195453
+AUT,rur,gas,0.204377
+AUT,rur,biomass_solid,0.414499
+AUT,rur,electricity,0.0557014
+AUT,rur,elec_hp,0.12997

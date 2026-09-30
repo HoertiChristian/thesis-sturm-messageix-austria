@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "sturm_messageix: a STURM ⇄ MESSAGEix-Austria building-sector soft-linkage"
+message: "If you use this software, please cite it and the accompanying thesis."
+type: software
+authors:
+  - family-names: Hörtenhuber
+    given-names: Christian
+abstract: >-
+  An iterative soft-linkage coupling the STURM building-stock model to
+  MESSAGEix-Austria: STURM's final energy converts to useful energy with the
+  energy-system model's own conversion coefficients and drives the buildings
+  demand, calibration-pinned to Austrian statistics, with prices fed back each
+  iteration. Used to study the system-wide effect of building-sector
+  digitalization and carbon pricing on Austria's 2040 climate-neutrality
+  target. (An earlier per-fuel activity-bounds coupling is retained as an
+  archived sensitivity.)
+keywords:
+  - MESSAGEix
+  - STURM
+  - buildings
+  - energy-system modelling
+  - Austria
+  - digitalization
+license: MIT
+notes: >-
+  The MIT licence covers the project's own code. The repository bundles third-party
+  assets under their own terms (STURM fork: Apache-2.0; MESSAGEix-Austria baseline
+  workbook; Macko 2025 dataset) — see LICENSE.
+version: 2.0.2
+date-released: "2026-09-08"
+# repository-code: <add the GitHub URL once the repository is published>

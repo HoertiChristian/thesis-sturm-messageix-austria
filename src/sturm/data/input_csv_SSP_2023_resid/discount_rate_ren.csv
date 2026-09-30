@@ -1,0 +1,9 @@
+region_gea,urt,arch,tenr,value
+AUT,rur,mfh,own,0.1
+AUT,rur,mfh,rent,0.4
+AUT,rur,sfh,own,0.07
+AUT,rur,sfh,rent,0.35
+AUT,urb,mfh,own,0.1
+AUT,urb,mfh,rent,0.4
+AUT,urb,sfh,own,0.07
+AUT,urb,sfh,rent,0.35

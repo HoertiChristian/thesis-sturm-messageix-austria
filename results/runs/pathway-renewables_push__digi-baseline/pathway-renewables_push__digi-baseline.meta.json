@@ -1,0 +1,46 @@
+{
+  "scenario_id": "pathway-renewables_push__digi-baseline",
+  "run_id": "pathway-renewables_push__digi-baseline",
+  "timestamp": "2026-09-08T18:49:44.710387+00:00",
+  "config": {
+    "base_year": 2025,
+    "calibration_year": 2024,
+    "horizon": [
+      2025,
+      2040
+    ],
+    "max_iterations": 20,
+    "convergence_tol": 0.005,
+    "bound_tol": 0.02,
+    "base_bound_tol": 0.0,
+    "base_hp_share": 0.7,
+    "bound_lower": true,
+    "linkage_mode": "useful",
+    "carbon_price_passthrough": true,
+    "price_damping": 0.5,
+    "sturm_region": "C-AUT",
+    "fossil_exit_shape": "logistic",
+    "digitalization_mode": "efficiency",
+    "platform_name": null,
+    "model_name": "MESSAGEix-Austria",
+    "scenario_name": "baseline-2025-r8",
+    "baseline_xlsx": null,
+    "solve": {
+      "model": "MESSAGE"
+    }
+  },
+  "convergence": {
+    "converged": true,
+    "iterations": 3,
+    "final_linf": 0.0,
+    "oscillation_corrected": false
+  },
+  "git": {
+    "commit": null,
+    "dirty": null
+  },
+  "input_hashes": {
+    "inputs.xlsx": "4c9ddb53c689aea4",
+    "baseline_4.xlsx": "2fd992d8556bc1c5"
+  }
+}

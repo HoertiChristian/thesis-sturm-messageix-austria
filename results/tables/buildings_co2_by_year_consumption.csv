@@ -1,0 +1,37 @@
+pathway,pathway_id,digitalization,digi_id,year,co2_kt
+Bio-Bridge,bio_bridge,Accelerated,accelerated,2025,14132.9
+Bio-Bridge,bio_bridge,Accelerated,accelerated,2030,10909.7
+Bio-Bridge,bio_bridge,Accelerated,accelerated,2035,8733.5
+Bio-Bridge,bio_bridge,Accelerated,accelerated,2040,8487.1
+Bio-Bridge,bio_bridge,Baseline,baseline,2025,14132.9
+Bio-Bridge,bio_bridge,Baseline,baseline,2030,10956.2
+Bio-Bridge,bio_bridge,Baseline,baseline,2035,8809.1
+Bio-Bridge,bio_bridge,Baseline,baseline,2040,8564.4
+Bio-Bridge,bio_bridge,Stagnating,stagnating,2025,14132.9
+Bio-Bridge,bio_bridge,Stagnating,stagnating,2030,11020.2
+Bio-Bridge,bio_bridge,Stagnating,stagnating,2035,8900.0
+Bio-Bridge,bio_bridge,Stagnating,stagnating,2040,8664.5
+Reference,reference,Accelerated,accelerated,2025,14132.9
+Reference,reference,Accelerated,accelerated,2030,11551.8
+Reference,reference,Accelerated,accelerated,2035,9936.6
+Reference,reference,Accelerated,accelerated,2040,9661.9
+Reference,reference,Baseline,baseline,2025,14132.9
+Reference,reference,Baseline,baseline,2030,11583.4
+Reference,reference,Baseline,baseline,2035,10004.9
+Reference,reference,Baseline,baseline,2040,9741.2
+Reference,reference,Stagnating,stagnating,2025,14132.9
+Reference,reference,Stagnating,stagnating,2030,11650.1
+Reference,reference,Stagnating,stagnating,2035,10096.0
+Reference,reference,Stagnating,stagnating,2040,9838.5
+Renewables Push,renewables_push,Accelerated,accelerated,2025,14132.9
+Renewables Push,renewables_push,Accelerated,accelerated,2030,10910.4
+Renewables Push,renewables_push,Accelerated,accelerated,2035,8762.6
+Renewables Push,renewables_push,Accelerated,accelerated,2040,8569.0
+Renewables Push,renewables_push,Baseline,baseline,2025,14132.9
+Renewables Push,renewables_push,Baseline,baseline,2030,10934.4
+Renewables Push,renewables_push,Baseline,baseline,2035,8812.0
+Renewables Push,renewables_push,Baseline,baseline,2040,8630.3
+Renewables Push,renewables_push,Stagnating,stagnating,2025,14132.9
+Renewables Push,renewables_push,Stagnating,stagnating,2030,10996.3
+Renewables Push,renewables_push,Stagnating,stagnating,2035,8885.4
+Renewables Push,renewables_push,Stagnating,stagnating,2040,8704.9

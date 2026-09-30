@@ -1,0 +1,10 @@
+pathway,digitalization,co2_kt,gap_to_wam_kt,pct_of_wam,gap_to_wem_kt
+Bio-Bridge,Accelerated,312.3,-987.7,24.0,-3087.7
+Bio-Bridge,Baseline,317.4,-982.6,24.4,-3082.6
+Bio-Bridge,Stagnating,323.1,-976.9,24.9,-3076.9
+Reference,Accelerated,890.7,-409.3,68.5,-2509.3
+Reference,Baseline,905.2,-394.8,69.6,-2494.8
+Reference,Stagnating,921.5,-378.5,70.9,-2478.5
+Renewables Push,Accelerated,53.6,-1246.4,4.1,-3346.4
+Renewables Push,Baseline,54.5,-1245.5,4.2,-3345.5
+Renewables Push,Stagnating,55.5,-1244.5,4.3,-3344.5

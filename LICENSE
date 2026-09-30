@@ -1,0 +1,46 @@
+MIT License
+
+Copyright (c) 2026 Christian Hörtenhuber
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+----------------------------------------------------------------------------
+Scope of the licence above and bundled third-party assets
+----------------------------------------------------------------------------
+
+The MIT licence covers the code written for this project: the Python packages
+under src/ (common, linkage, messageix, and the Python interface in
+src/sturm/*.py), the tests, the viz/ scripts, the notebooks, data/inputs.xlsx and the documentation.
+
+The following third-party assets are NOT covered by the MIT licence above and
+keep their own terms:
+
+- The STURM R model and its input data (src/sturm/model/, src/sturm/data/,
+  src/sturm/run_sturm_headless.R): a fork of IIASA's message-ix-buildings
+  (Apache License 2.0 — see src/sturm/LICENSE-APACHE; fork edits are logged in
+  docs/data/sturm_fork_changelog.md).
+- The MESSAGEix-Austria baseline workbook (data/MESSAGEix-AT_baseline_4.xlsx),
+  derived from the IIASA/WU guideline handover.
+- The Macko (2025) dataset (data/macko_reduction.xlsx).
+
+Redistribution permission for the last two has not yet been confirmed by their
+originators; they are therefore NOT included in this repository and are
+available on request. The Austrian
+reference data under data/ is derived from Statistik Austria (STATcube) and is
+attributed in data/README.md and data/austria_raw/SOURCES.md.

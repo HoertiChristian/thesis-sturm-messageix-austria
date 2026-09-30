@@ -1,0 +1,9 @@
+region_gea,mat,eneff,fuel_heat,fuel_cool,value
+AUT,perm,s51_std,biomass_solid,electricity,1
+AUT,perm,s51_std,coal,electricity,1
+AUT,perm,s51_std,oil,electricity,1
+AUT,perm,s52_low,biomass_solid,electricity,1
+AUT,perm,s52_low,coal,electricity,1
+AUT,perm,s52_low,oil,electricity,1
+AUT,perm,s51_std,electricity,electricity,1
+AUT,perm,s52_low,electricity,electricity,1

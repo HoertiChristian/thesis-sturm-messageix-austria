@@ -1,0 +1,46 @@
+pathway,comparison,fuel,saving_kt,coefficient_effect_kt,activity_effect_kt
+Reference,no additional digitalization minus accelerated,gas,66.4,66.4,0.0
+Reference,no additional digitalization minus accelerated,lightoil,0.0,0.0,0.0
+Reference,no additional digitalization minus accelerated,coal,0.0,0.0,0.0
+Reference,no additional digitalization minus accelerated,biomass,5.5,5.5,0.0
+Reference,no additional digitalization minus accelerated,d_heat,117.1,172.4,-55.3
+Reference,no additional digitalization minus accelerated,electr_heat_pump,169.1,133.8,35.3
+Reference,no additional digitalization minus accelerated,electr_resistive,0.0,0.0,0.0
+Reference,no additional digitalization minus accelerated,electr_specific,0.0,0.0,0.0
+Reference,no additional digitalization minus accelerated,TOTAL,358.0,378.0,-20.0
+Reference,stagnating minus accelerated,gas,35.8,35.8,0.0
+Reference,stagnating minus accelerated,lightoil,0.0,0.0,0.0
+Reference,stagnating minus accelerated,coal,0.0,0.0,0.0
+Reference,stagnating minus accelerated,biomass,3.0,3.0,0.0
+Reference,stagnating minus accelerated,d_heat,39.3,93.1,-53.8
+Reference,stagnating minus accelerated,electr_heat_pump,98.5,72.3,26.2
+Reference,stagnating minus accelerated,electr_resistive,0.0,0.0,0.0
+Reference,stagnating minus accelerated,electr_specific,0.0,0.0,0.0
+Reference,stagnating minus accelerated,TOTAL,176.6,204.2,-27.6
+Reference,no additional digitalization minus baseline,gas,49.5,49.5,0.0
+Reference,no additional digitalization minus baseline,lightoil,0.0,0.0,0.0
+Reference,no additional digitalization minus baseline,coal,0.0,0.0,0.0
+Reference,no additional digitalization minus baseline,biomass,4.1,4.1,0.0
+Reference,no additional digitalization minus baseline,d_heat,98.1,127.3,-29.2
+Reference,no additional digitalization minus baseline,electr_heat_pump,127.1,100.1,27.0
+Reference,no additional digitalization minus baseline,electr_resistive,0.0,0.0,0.0
+Reference,no additional digitalization minus baseline,electr_specific,0.0,0.0,0.0
+Reference,no additional digitalization minus baseline,TOTAL,278.7,280.9,-2.2
+Renewables Push,stagnating minus accelerated,gas,0.0,0.0,0.0
+Renewables Push,stagnating minus accelerated,lightoil,0.0,0.0,0.0
+Renewables Push,stagnating minus accelerated,coal,0.0,0.0,0.0
+Renewables Push,stagnating minus accelerated,biomass,3.0,3.0,0.0
+Renewables Push,stagnating minus accelerated,d_heat,39.3,93.1,-53.8
+Renewables Push,stagnating minus accelerated,electr_heat_pump,93.6,70.3,23.2
+Renewables Push,stagnating minus accelerated,electr_resistive,0.0,0.0,0.0
+Renewables Push,stagnating minus accelerated,electr_specific,0.0,0.0,0.0
+Renewables Push,stagnating minus accelerated,TOTAL,135.9,166.4,-30.5
+Bio-Bridge,stagnating minus accelerated,gas,0.0,0.0,0.0
+Bio-Bridge,stagnating minus accelerated,lightoil,0.0,0.0,0.0
+Bio-Bridge,stagnating minus accelerated,coal,0.0,0.0,0.0
+Bio-Bridge,stagnating minus accelerated,biomass,17.3,17.3,0.0
+Bio-Bridge,stagnating minus accelerated,d_heat,91.3,91.3,0.0
+Bio-Bridge,stagnating minus accelerated,electr_heat_pump,68.8,55.0,13.8
+Bio-Bridge,stagnating minus accelerated,electr_resistive,0.0,0.0,0.0
+Bio-Bridge,stagnating minus accelerated,electr_specific,0.0,0.0,0.0
+Bio-Bridge,stagnating minus accelerated,TOTAL,177.4,163.6,13.8

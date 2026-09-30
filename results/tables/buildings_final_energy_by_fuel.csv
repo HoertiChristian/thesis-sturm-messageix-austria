@@ -1,0 +1,361 @@
+pathway,level,year,fuel,final_energy_gwa
+Reference,baseline,2025,gas,1.8782
+Reference,baseline,2025,lightoil,0.8057
+Reference,baseline,2025,coal,0.0051
+Reference,baseline,2025,biomass,2.7001
+Reference,baseline,2025,d_heat,1.933
+Reference,baseline,2025,electr,3.1757
+Reference,baseline,2025,electr_heat_pump,0.6361
+Reference,baseline,2025,electr_resistive,0.7174
+Reference,baseline,2025,electr_specific,1.8222
+Reference,baseline,2030,gas,1.2954
+Reference,baseline,2030,lightoil,0.326
+Reference,baseline,2030,coal,0.0
+Reference,baseline,2030,biomass,1.6745
+Reference,baseline,2030,d_heat,1.8925
+Reference,baseline,2030,electr,3.5127
+Reference,baseline,2030,electr_heat_pump,1.1296
+Reference,baseline,2030,electr_resistive,0.3164
+Reference,baseline,2030,electr_specific,2.0667
+Reference,baseline,2035,gas,0.8485
+Reference,baseline,2035,lightoil,0.0
+Reference,baseline,2035,coal,0.0
+Reference,baseline,2035,biomass,0.9514
+Reference,baseline,2035,d_heat,1.8707
+Reference,baseline,2035,electr,3.9307
+Reference,baseline,2035,electr_heat_pump,1.498
+Reference,baseline,2035,electr_resistive,0.023
+Reference,baseline,2035,electr_specific,2.4097
+Reference,baseline,2040,gas,0.4832
+Reference,baseline,2040,lightoil,0.0
+Reference,baseline,2040,coal,0.0
+Reference,baseline,2040,biomass,0.4149
+Reference,baseline,2040,d_heat,1.8656
+Reference,baseline,2040,electr,4.4214
+Reference,baseline,2040,electr_heat_pump,1.602
+Reference,baseline,2040,electr_resistive,0.0
+Reference,baseline,2040,electr_specific,2.8195
+Reference,stagnating,2025,gas,1.8782
+Reference,stagnating,2025,lightoil,0.8057
+Reference,stagnating,2025,coal,0.0051
+Reference,stagnating,2025,biomass,2.7001
+Reference,stagnating,2025,d_heat,1.933
+Reference,stagnating,2025,electr,3.1757
+Reference,stagnating,2025,electr_heat_pump,0.6361
+Reference,stagnating,2025,electr_resistive,0.7174
+Reference,stagnating,2025,electr_specific,1.8222
+Reference,stagnating,2030,gas,1.3078
+Reference,stagnating,2030,lightoil,0.3291
+Reference,stagnating,2030,coal,0.0
+Reference,stagnating,2030,biomass,1.6905
+Reference,stagnating,2030,d_heat,1.891
+Reference,stagnating,2030,electr,3.5344
+Reference,stagnating,2030,electr_heat_pump,1.1483
+Reference,stagnating,2030,electr_resistive,0.3194
+Reference,stagnating,2030,electr_specific,2.0667
+Reference,stagnating,2035,gas,0.8621
+Reference,stagnating,2035,lightoil,0.0
+Reference,stagnating,2035,coal,0.0
+Reference,stagnating,2035,biomass,0.9667
+Reference,stagnating,2035,d_heat,1.8812
+Reference,stagnating,2035,electr,3.963
+Reference,stagnating,2035,electr_heat_pump,1.5299
+Reference,stagnating,2035,electr_resistive,0.0234
+Reference,stagnating,2035,electr_specific,2.4097
+Reference,stagnating,2040,gas,0.4918
+Reference,stagnating,2040,lightoil,0.0
+Reference,stagnating,2040,coal,0.0
+Reference,stagnating,2040,biomass,0.4224
+Reference,stagnating,2040,d_heat,1.8795
+Reference,stagnating,2040,electr,4.4638
+Reference,stagnating,2040,electr_heat_pump,1.6444
+Reference,stagnating,2040,electr_resistive,0.0
+Reference,stagnating,2040,electr_specific,2.8195
+Reference,accelerated,2025,gas,1.8782
+Reference,accelerated,2025,lightoil,0.8057
+Reference,accelerated,2025,coal,0.0051
+Reference,accelerated,2025,biomass,2.7001
+Reference,accelerated,2025,d_heat,1.933
+Reference,accelerated,2025,electr,3.1757
+Reference,accelerated,2025,electr_heat_pump,0.6361
+Reference,accelerated,2025,electr_resistive,0.7174
+Reference,accelerated,2025,electr_specific,1.8222
+Reference,accelerated,2030,gas,1.2867
+Reference,accelerated,2030,lightoil,0.3238
+Reference,accelerated,2030,coal,0.0
+Reference,accelerated,2030,biomass,1.6632
+Reference,accelerated,2030,d_heat,1.897
+Reference,accelerated,2030,electr,3.505
+Reference,accelerated,2030,electr_heat_pump,1.124
+Reference,accelerated,2030,electr_resistive,0.3143
+Reference,accelerated,2030,electr_specific,2.0667
+Reference,accelerated,2035,gas,0.837
+Reference,accelerated,2035,lightoil,0.0
+Reference,accelerated,2035,coal,0.0
+Reference,accelerated,2035,biomass,0.9386
+Reference,accelerated,2035,d_heat,1.8624
+Reference,accelerated,2035,electr,3.9093
+Reference,accelerated,2035,electr_heat_pump,1.4768
+Reference,accelerated,2035,electr_resistive,0.0227
+Reference,accelerated,2035,electr_specific,2.4097
+Reference,accelerated,2040,gas,0.4754
+Reference,accelerated,2040,lightoil,0.0
+Reference,accelerated,2040,coal,0.0
+Reference,accelerated,2040,biomass,0.4083
+Reference,accelerated,2040,d_heat,1.8525
+Reference,accelerated,2040,electr,4.3899
+Reference,accelerated,2040,electr_heat_pump,1.5704
+Reference,accelerated,2040,electr_resistive,0.0
+Reference,accelerated,2040,electr_specific,2.8195
+Reference,no additional digitalization,2025,gas,1.8782
+Reference,no additional digitalization,2025,lightoil,0.8057
+Reference,no additional digitalization,2025,coal,0.0051
+Reference,no additional digitalization,2025,biomass,2.7001
+Reference,no additional digitalization,2025,d_heat,1.933
+Reference,no additional digitalization,2025,electr,3.1757
+Reference,no additional digitalization,2025,electr_heat_pump,0.6361
+Reference,no additional digitalization,2025,electr_resistive,0.7174
+Reference,no additional digitalization,2025,electr_specific,1.8222
+Reference,no additional digitalization,2030,gas,1.3369
+Reference,no additional digitalization,2030,lightoil,0.3365
+Reference,no additional digitalization,2030,coal,0.0
+Reference,no additional digitalization,2030,biomass,1.7281
+Reference,no additional digitalization,2030,d_heat,1.933
+Reference,no additional digitalization,2030,electr,3.5763
+Reference,no additional digitalization,2030,electr_heat_pump,1.1831
+Reference,no additional digitalization,2030,electr_resistive,0.3265
+Reference,no additional digitalization,2030,electr_specific,2.0667
+Reference,no additional digitalization,2035,gas,0.8858
+Reference,no additional digitalization,2035,lightoil,0.0
+Reference,no additional digitalization,2035,coal,0.0
+Reference,no additional digitalization,2035,biomass,0.9933
+Reference,no additional digitalization,2035,d_heat,1.933
+Reference,no additional digitalization,2035,electr,4.0109
+Reference,no additional digitalization,2035,electr_heat_pump,1.5771
+Reference,no additional digitalization,2035,electr_resistive,0.024
+Reference,no additional digitalization,2035,electr_specific,2.4097
+Reference,no additional digitalization,2040,gas,0.5058
+Reference,no additional digitalization,2040,lightoil,0.0
+Reference,no additional digitalization,2040,coal,0.0
+Reference,no additional digitalization,2040,biomass,0.4344
+Reference,no additional digitalization,2040,d_heat,1.933
+Reference,no additional digitalization,2040,electr,4.5169
+Reference,no additional digitalization,2040,electr_heat_pump,1.6974
+Reference,no additional digitalization,2040,electr_resistive,0.0
+Reference,no additional digitalization,2040,electr_specific,2.8195
+Renewables Push,baseline,2025,gas,1.8782
+Renewables Push,baseline,2025,lightoil,0.8057
+Renewables Push,baseline,2025,coal,0.0051
+Renewables Push,baseline,2025,biomass,2.7001
+Renewables Push,baseline,2025,d_heat,1.933
+Renewables Push,baseline,2025,electr,3.1757
+Renewables Push,baseline,2025,electr_heat_pump,0.6361
+Renewables Push,baseline,2025,electr_resistive,0.7174
+Renewables Push,baseline,2025,electr_specific,1.8222
+Renewables Push,baseline,2030,gas,1.5031
+Renewables Push,baseline,2030,lightoil,0.0
+Renewables Push,baseline,2030,coal,0.0
+Renewables Push,baseline,2030,biomass,1.6745
+Renewables Push,baseline,2030,d_heat,1.8925
+Renewables Push,baseline,2030,electr,3.4185
+Renewables Push,baseline,2030,electr_heat_pump,1.0355
+Renewables Push,baseline,2030,electr_resistive,0.3164
+Renewables Push,baseline,2030,electr_specific,2.0667
+Renewables Push,baseline,2035,gas,0.3104
+Renewables Push,baseline,2035,lightoil,0.0
+Renewables Push,baseline,2035,coal,0.0
+Renewables Push,baseline,2035,biomass,0.9514
+Renewables Push,baseline,2035,d_heat,1.8707
+Renewables Push,baseline,2035,electr,3.9163
+Renewables Push,baseline,2035,electr_heat_pump,1.4836
+Renewables Push,baseline,2035,electr_resistive,0.023
+Renewables Push,baseline,2035,electr_specific,2.4097
+Renewables Push,baseline,2040,gas,0.0
+Renewables Push,baseline,2040,lightoil,0.0
+Renewables Push,baseline,2040,coal,0.0
+Renewables Push,baseline,2040,biomass,0.4149
+Renewables Push,baseline,2040,d_heat,1.8656
+Renewables Push,baseline,2040,electr,4.3786
+Renewables Push,baseline,2040,electr_heat_pump,1.5592
+Renewables Push,baseline,2040,electr_resistive,0.0
+Renewables Push,baseline,2040,electr_specific,2.8195
+Renewables Push,stagnating,2025,gas,1.8782
+Renewables Push,stagnating,2025,lightoil,0.8057
+Renewables Push,stagnating,2025,coal,0.0051
+Renewables Push,stagnating,2025,biomass,2.7001
+Renewables Push,stagnating,2025,d_heat,1.933
+Renewables Push,stagnating,2025,electr,3.1757
+Renewables Push,stagnating,2025,electr_heat_pump,0.6361
+Renewables Push,stagnating,2025,electr_resistive,0.7174
+Renewables Push,stagnating,2025,electr_specific,1.8222
+Renewables Push,stagnating,2030,gas,1.5175
+Renewables Push,stagnating,2030,lightoil,0.0
+Renewables Push,stagnating,2030,coal,0.0
+Renewables Push,stagnating,2030,biomass,1.6905
+Renewables Push,stagnating,2030,d_heat,1.891
+Renewables Push,stagnating,2030,electr,3.4405
+Renewables Push,stagnating,2030,electr_heat_pump,1.0544
+Renewables Push,stagnating,2030,electr_resistive,0.3194
+Renewables Push,stagnating,2030,electr_specific,2.0667
+Renewables Push,stagnating,2035,gas,0.3153
+Renewables Push,stagnating,2035,lightoil,0.0
+Renewables Push,stagnating,2035,coal,0.0
+Renewables Push,stagnating,2035,biomass,0.9667
+Renewables Push,stagnating,2035,d_heat,1.8812
+Renewables Push,stagnating,2035,electr,3.9494
+Renewables Push,stagnating,2035,electr_heat_pump,1.5163
+Renewables Push,stagnating,2035,electr_resistive,0.0234
+Renewables Push,stagnating,2035,electr_specific,2.4097
+Renewables Push,stagnating,2040,gas,0.0
+Renewables Push,stagnating,2040,lightoil,0.0
+Renewables Push,stagnating,2040,coal,0.0
+Renewables Push,stagnating,2040,biomass,0.4224
+Renewables Push,stagnating,2040,d_heat,1.8795
+Renewables Push,stagnating,2040,electr,4.4182
+Renewables Push,stagnating,2040,electr_heat_pump,1.5987
+Renewables Push,stagnating,2040,electr_resistive,0.0
+Renewables Push,stagnating,2040,electr_specific,2.8195
+Renewables Push,accelerated,2025,gas,1.8782
+Renewables Push,accelerated,2025,lightoil,0.8057
+Renewables Push,accelerated,2025,coal,0.0051
+Renewables Push,accelerated,2025,biomass,2.7001
+Renewables Push,accelerated,2025,d_heat,1.933
+Renewables Push,accelerated,2025,electr,3.1757
+Renewables Push,accelerated,2025,electr_heat_pump,0.6361
+Renewables Push,accelerated,2025,electr_resistive,0.7174
+Renewables Push,accelerated,2025,electr_specific,1.8222
+Renewables Push,accelerated,2030,gas,1.4929
+Renewables Push,accelerated,2030,lightoil,0.0
+Renewables Push,accelerated,2030,coal,0.0
+Renewables Push,accelerated,2030,biomass,1.6632
+Renewables Push,accelerated,2030,d_heat,1.897
+Renewables Push,accelerated,2030,electr,3.4139
+Renewables Push,accelerated,2030,electr_heat_pump,1.033
+Renewables Push,accelerated,2030,electr_resistive,0.3143
+Renewables Push,accelerated,2030,electr_specific,2.0667
+Renewables Push,accelerated,2035,gas,0.3062
+Renewables Push,accelerated,2035,lightoil,0.0
+Renewables Push,accelerated,2035,coal,0.0
+Renewables Push,accelerated,2035,biomass,0.9386
+Renewables Push,accelerated,2035,d_heat,1.8624
+Renewables Push,accelerated,2035,electr,3.8972
+Renewables Push,accelerated,2035,electr_heat_pump,1.4648
+Renewables Push,accelerated,2035,electr_resistive,0.0227
+Renewables Push,accelerated,2035,electr_specific,2.4097
+Renewables Push,accelerated,2040,gas,0.0
+Renewables Push,accelerated,2040,lightoil,0.0
+Renewables Push,accelerated,2040,coal,0.0
+Renewables Push,accelerated,2040,biomass,0.4083
+Renewables Push,accelerated,2040,d_heat,1.8525
+Renewables Push,accelerated,2040,electr,4.3479
+Renewables Push,accelerated,2040,electr_heat_pump,1.5285
+Renewables Push,accelerated,2040,electr_resistive,0.0
+Renewables Push,accelerated,2040,electr_specific,2.8195
+Bio-Bridge,baseline,2025,gas,1.8782
+Bio-Bridge,baseline,2025,lightoil,0.8057
+Bio-Bridge,baseline,2025,coal,0.0051
+Bio-Bridge,baseline,2025,biomass,2.7001
+Bio-Bridge,baseline,2025,d_heat,1.933
+Bio-Bridge,baseline,2025,electr,3.1757
+Bio-Bridge,baseline,2025,electr_heat_pump,0.6361
+Bio-Bridge,baseline,2025,electr_resistive,0.7174
+Bio-Bridge,baseline,2025,electr_specific,1.8222
+Bio-Bridge,baseline,2030,gas,1.5031
+Bio-Bridge,baseline,2030,lightoil,0.0
+Bio-Bridge,baseline,2030,coal,0.0
+Bio-Bridge,baseline,2030,biomass,2.5245
+Bio-Bridge,baseline,2030,d_heat,1.873
+Bio-Bridge,baseline,2030,electr,3.322
+Bio-Bridge,baseline,2030,electr_heat_pump,0.9389
+Bio-Bridge,baseline,2030,electr_resistive,0.3164
+Bio-Bridge,baseline,2030,electr_specific,2.0667
+Bio-Bridge,baseline,2035,gas,0.3104
+Bio-Bridge,baseline,2035,lightoil,0.0
+Bio-Bridge,baseline,2035,coal,0.0
+Bio-Bridge,baseline,2035,biomass,2.4588
+Bio-Bridge,baseline,2035,d_heat,1.8515
+Bio-Bridge,baseline,2035,electr,3.6971
+Bio-Bridge,baseline,2035,electr_heat_pump,1.2644
+Bio-Bridge,baseline,2035,electr_resistive,0.023
+Bio-Bridge,baseline,2035,electr_specific,2.4097
+Bio-Bridge,baseline,2040,gas,0.0
+Bio-Bridge,baseline,2040,lightoil,0.0
+Bio-Bridge,baseline,2040,coal,0.0
+Bio-Bridge,baseline,2040,biomass,2.4154
+Bio-Bridge,baseline,2040,d_heat,1.8464
+Bio-Bridge,baseline,2040,electr,4.0342
+Bio-Bridge,baseline,2040,electr_heat_pump,1.2148
+Bio-Bridge,baseline,2040,electr_resistive,0.0
+Bio-Bridge,baseline,2040,electr_specific,2.8195
+Bio-Bridge,stagnating,2025,gas,1.8782
+Bio-Bridge,stagnating,2025,lightoil,0.8057
+Bio-Bridge,stagnating,2025,coal,0.0051
+Bio-Bridge,stagnating,2025,biomass,2.7001
+Bio-Bridge,stagnating,2025,d_heat,1.933
+Bio-Bridge,stagnating,2025,electr,3.1757
+Bio-Bridge,stagnating,2025,electr_heat_pump,0.6361
+Bio-Bridge,stagnating,2025,electr_resistive,0.7174
+Bio-Bridge,stagnating,2025,electr_specific,1.8222
+Bio-Bridge,stagnating,2030,gas,1.5084
+Bio-Bridge,stagnating,2030,lightoil,0.0
+Bio-Bridge,stagnating,2030,coal,0.0
+Bio-Bridge,stagnating,2030,biomass,2.5487
+Bio-Bridge,stagnating,2030,d_heat,1.891
+Bio-Bridge,stagnating,2030,electr,3.3379
+Bio-Bridge,stagnating,2030,electr_heat_pump,0.9518
+Bio-Bridge,stagnating,2030,electr_resistive,0.3194
+Bio-Bridge,stagnating,2030,electr_specific,2.0667
+Bio-Bridge,stagnating,2035,gas,0.3153
+Bio-Bridge,stagnating,2035,lightoil,0.0
+Bio-Bridge,stagnating,2035,coal,0.0
+Bio-Bridge,stagnating,2035,biomass,2.4983
+Bio-Bridge,stagnating,2035,d_heat,1.8812
+Bio-Bridge,stagnating,2035,electr,3.7186
+Bio-Bridge,stagnating,2035,electr_heat_pump,1.2855
+Bio-Bridge,stagnating,2035,electr_resistive,0.0234
+Bio-Bridge,stagnating,2035,electr_specific,2.4097
+Bio-Bridge,stagnating,2040,gas,0.0
+Bio-Bridge,stagnating,2040,lightoil,0.0
+Bio-Bridge,stagnating,2040,coal,0.0
+Bio-Bridge,stagnating,2040,biomass,2.4588
+Bio-Bridge,stagnating,2040,d_heat,1.8795
+Bio-Bridge,stagnating,2040,electr,4.0663
+Bio-Bridge,stagnating,2040,electr_heat_pump,1.2469
+Bio-Bridge,stagnating,2040,electr_resistive,0.0
+Bio-Bridge,stagnating,2040,electr_specific,2.8195
+Bio-Bridge,accelerated,2025,gas,1.8782
+Bio-Bridge,accelerated,2025,lightoil,0.8057
+Bio-Bridge,accelerated,2025,coal,0.0051
+Bio-Bridge,accelerated,2025,biomass,2.7001
+Bio-Bridge,accelerated,2025,d_heat,1.933
+Bio-Bridge,accelerated,2025,electr,3.1757
+Bio-Bridge,accelerated,2025,electr_heat_pump,0.6361
+Bio-Bridge,accelerated,2025,electr_resistive,0.7174
+Bio-Bridge,accelerated,2025,electr_specific,1.8222
+Bio-Bridge,accelerated,2030,gas,1.4929
+Bio-Bridge,accelerated,2030,lightoil,0.0
+Bio-Bridge,accelerated,2030,coal,0.0
+Bio-Bridge,accelerated,2030,biomass,2.5075
+Bio-Bridge,accelerated,2030,d_heat,1.8604
+Bio-Bridge,accelerated,2030,electr,3.3201
+Bio-Bridge,accelerated,2030,electr_heat_pump,0.9391
+Bio-Bridge,accelerated,2030,electr_resistive,0.3143
+Bio-Bridge,accelerated,2030,electr_specific,2.0667
+Bio-Bridge,accelerated,2035,gas,0.3062
+Bio-Bridge,accelerated,2035,lightoil,0.0
+Bio-Bridge,accelerated,2035,coal,0.0
+Bio-Bridge,accelerated,2035,biomass,2.4256
+Bio-Bridge,accelerated,2035,d_heat,1.8265
+Bio-Bridge,accelerated,2035,electr,3.6798
+Bio-Bridge,accelerated,2035,electr_heat_pump,1.2474
+Bio-Bridge,accelerated,2035,electr_resistive,0.0227
+Bio-Bridge,accelerated,2035,electr_specific,2.4097
+Bio-Bridge,accelerated,2040,gas,0.0
+Bio-Bridge,accelerated,2040,lightoil,0.0
+Bio-Bridge,accelerated,2040,coal,0.0
+Bio-Bridge,accelerated,2040,biomass,2.3767
+Bio-Bridge,accelerated,2040,d_heat,1.8168
+Bio-Bridge,accelerated,2040,electr,4.0146
+Bio-Bridge,accelerated,2040,electr_heat_pump,1.1952
+Bio-Bridge,accelerated,2040,electr_resistive,0.0
+Bio-Bridge,accelerated,2040,electr_specific,2.8195
